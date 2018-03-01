@@ -9,7 +9,7 @@ num_same_pid = 0
 # Dummy Read Header
 line = proc.stdout.readline()
 prev_pid = '1'
-print("PID", '\t', "Connections")
+pids = dict()
 
 while True:
     line = proc.stdout.readline()
@@ -22,8 +22,12 @@ while True:
         if cur_pid == prev_pid:
             num_same_pid += 1
         else:
-            print(prev_pid, '\t\t' if int(prev_pid) < 100 else '\t', num_same_pid)
+            pids[int(prev_pid)] = num_same_pid
             prev_pid = cur_pid
             num_same_pid = 0
-
 proc.wait()
+
+print("PID", '\t', "Connections")
+for x in sorted(pids.keys()):
+    print(x, '\t\t' if int(x) < 100 else '\t', pids[x])
+
