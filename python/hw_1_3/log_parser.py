@@ -3,8 +3,8 @@ import re
 
 
 def log_parser(file_name):
-    finish_dict = dict()
     start_dict = dict()
+    finish_dict = dict()
     error_dict = dict()
 
     with open(file_name, "r") as fin:
@@ -18,8 +18,9 @@ def log_parser(file_name):
             else:
                 error_dict[int(data[-1])] = data[-1]
     fin.close()
+
     exec_time_print(start_dict, finish_dict)
-    # err_msg_print(error_list)
+    err_msg_print(error_dict)
 
 
 def exec_time_print(stime, etime):
@@ -31,9 +32,9 @@ def exec_time_print(stime, etime):
         except:
             pass
 
-def err_msg_print(errors_list):
+def err_msg_print(errors_dict):
     print("Errors")
-    for x in errors_list:
+    for x in errors_dict:
         print("Request %d: Calculation failed" % x)
 
 def get_period_in_sec(stm, etm):
