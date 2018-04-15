@@ -41,11 +41,10 @@ def add_data_to_dict(data, res):
 def prepare_list(data):
     """
     [0] = id req
-    [1] = date
-    [2] = time
-    [3] = type msg
-    [4] =
-    [4] = err msg
+    [1] = type msg
+    [2] = date
+    [3] = time
+    [4] = msg
     :return: packed list
     """
     pack_list = list()
