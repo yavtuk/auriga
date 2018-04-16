@@ -14,7 +14,7 @@ def log_parser(file_name):
             packed_list = prepare_list(data)
             add_data_to_dict(packed_list, stats)
     fin.close()
-    exec_time_print(stats)
+    stats_print(stats)
     err_msg_print(stats)
 
 def add_data_to_dict(data, res):
@@ -61,7 +61,7 @@ def prepare_list(data):
     pack_list.append(msg)
     return pack_list
 
-def exec_time_print(data):
+def stats_print(data):
     for x in data:
         info = data[x]
         if info['eDate'] and info['sDate']:
