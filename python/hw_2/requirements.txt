@@ -1,7 +1,0 @@
-Flask>=0.12.2
-Flask-API>=1.0
-peewee>=3.2.0
-Pillow>=5.0.0
-pyOpenSSL>=17.5.0
-reportlab>=3.4.0
-typing>=3.6.4
